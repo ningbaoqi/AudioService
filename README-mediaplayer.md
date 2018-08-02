@@ -1,4 +1,31 @@
 ### ＭediaPlayer播放音频文件
+#### 播放应用的原始资源文件
+
+|播放应用的原始资源文件按如下步骤即可|
+|------|
+|调用Context的getAssets()方法获取应用的AssetManager|
+|调用AssetManager对象的openFd(String name)方法打开指定的原始资源，该方法返回一个AssetFileDescriptor对象|
+|调用AssetFileDescriptor的getFileDescriptor()、getStartOffset()和getLength()方法来获取音频文件的FileDescriptor、开始位置、长度等|
+|创建MediaPlayer对象（或利用已有的MediaPlayer对象），并调用MediaPlayer对象的setDataSource(FileDiscriptor fd , long offset , long length)方法来装载音频资源|
+|调用MediaPlayer对象的prepare()方法准备音频|
+|调用MediaPlayer的start()、pause()、stop()等方法控制播放即可|
+
++ 虽然MediaPlayer提供了setDataSource(FileDescriptor fd)方法来装载指定的音频资源，但实际使用这个方法似乎有问题，不管程序调用openFd(String name)方法时指定打开哪个原始资源，MediaPlayer将总是播放第一个原始音频资源；
+
+```
+AssetManager am = getAssets();
+//打开指定音乐文件
+AssetFileDescriptor afd = am.openFd(music);
+MediaPlayer mPlayer = new MediaPlayer();
+//使用MediaPlayer装载指定的声音文件
+mPlayer.setDataSource(afd.getFileDescriptor() , afd.getStartOffset() , afd.getLength());
+//准备声音
+mPlayer.prepare();
+//播放
+mPlayer.start();
+```
+
+
 ##### Activity
 
 ```
