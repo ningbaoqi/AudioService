@@ -14,3 +14,6 @@
 |AudioSystem|提供了定义音频系统的基本类型和基本操作的接口|
 |AudioTrack|直接为PCM数据提供支持|
 |AudioRecord|音频系统的录音接口，默认的编码格式为PCM_16_BIT|
+|Ringtone和RingtoneManager|为铃声、提示音、闹钟等提供了快速播放以及管理的接口，实质是对媒体播放器提供了一个简单的封装|
+|SoundPool|能够播放音频流的组合音，主要被应用在游戏领域|
+|android.media.audiofx包|android2.3新增的包，提供了对单曲和全局的音效的支持，包括重低音、环绕音、均衡器、混响、可视化等声音特效|
