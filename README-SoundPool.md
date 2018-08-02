@@ -30,6 +30,6 @@
 |调用SoundPool对象的load()方法从指定资源、文件中加载声音，最好使用`HashMap<Integer , Integer>`来管理所加载的声音|
 |使用SoundPool的play()方法播放声音|
 
-image
+![image](https://github.com/ningbaoqi/AudioService/blob/master/gif/pic-1.jpg)
 
 + 实际使用SoundPool播放声音时有如下几点需要注意：SoundPool虽然可以一次性加载多个声音，但由于内存限制，因此应该避免使用SoundPool来播放歌曲或者做游戏背景音乐，只有哪些短促、密集的声音才考虑使用SoundPool进行播放；虽然SoundPool比MediaPlayer的效率好，但也不是绝对不存在延迟问题，尤其在那些性能不太好的手机中，SoundPool的延迟问题会更严重；
