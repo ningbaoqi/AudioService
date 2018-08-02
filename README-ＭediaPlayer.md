@@ -25,3 +25,13 @@
 |public void prepare()|让播放器处于准备状态(同步的)|
 |public native void prepareAsync()|让播放器处于准备状态(异步的)|
 |public void release()|释放资源|
+|public void reset()|重置到初始化状态|
+|public void seekTo(long msec, @SeekMode int mode)|搜寻指定的时间位置|
+|public void setAudioStreamType(int streamtype)|设置音频流类型|
+|public void setDataSource(@NonNull Context context, @NonNull Uri uri)|指定一个uri内容的资源|
+|public void setDataSource(FileDescriptor fd)|指定数据源|
+|public void setDataSource(String path)|从指定的path路径所代表的文件|
+|public void setDataSource(FileDescriptor fd, long offset, long length)|指定装载fd所代表的文件中从offset开始长度为length的文件内容|
+|public void setDisplay(SurfaceHolder sh)|设定播放该video的媒体播放器的SurfaceHolder|
+|public native void setLooping(boolean looping)|设置播放器循环还是不循环|
+|public void setOnBufferingUpdateListener(OnBufferingUpdateListener listener)|注册一个当网络缓冲数据流变化时唤起的播放事件|
