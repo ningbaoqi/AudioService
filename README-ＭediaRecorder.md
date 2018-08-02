@@ -3,5 +3,5 @@
 
 |ＭediaRecorder常用的方法|说明|
 |------|------|
-|||
+|setAudioEncoder(int audio_encoder)|设置刻录的音频编码，其值可以通过MediaRecoder内部类的MediaRecorder.AudioEncoder的几个常量：|
 |||
