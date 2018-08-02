@@ -49,6 +49,7 @@
 
 [ＭediaPlayer播放音频文件](https://github.com/ningbaoqi/AudioService/blob/master/README-mediaplayer.md)
 
+[ＭediaPlayer播放视频文件](https://github.com/ningbaoqi/AudioService/blob/master/README-mediaplayer1.md)
 
 
 
