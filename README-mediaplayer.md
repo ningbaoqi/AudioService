@@ -1,5 +1,5 @@
 ### ＭediaPlayer播放音频文件
-#### Activity
+##### Activity
 
 ```
  public class MainActivity extends AppCompatActivity {
@@ -69,7 +69,7 @@
  }
 ```
 
-#### MusicPlayerProxyInterface.java
+##### MusicPlayerProxyInterface.java
 
 ```
 public interface MusicPlayerProxyInterface {
