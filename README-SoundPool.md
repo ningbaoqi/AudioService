@@ -22,3 +22,14 @@
 |int play(int soundID , float leftVolume , float rightVolume ,int priority , int loop , float rate)|该方法的第一个参数指定播放哪个声音，leftVolume、rightVolume指定左、右的音量；priority：指定播放声音的优先级，数值越大，优先级就越高；loop：指定是否循环，0为不循环，-1为循环；rate：指定播放的比率，数值可从0.5到2，1为正常比率|
 
 + 为了更好的管理SoundPool所加载的每个声音的ID，程序会使用`HashMap<Integer , Integer>`对象来管理声音；
+
+|使用SoundPool播放声音的步骤|
+|------|
+|调用SoundPool.Builder的构造器创建SoundPool.Builder对象，并可通过该对象为SoundPool设置属性|
+|调用SoundPool的构造器创建SoundPool对象|
+|调用SoundPool对象的load()方法从指定资源、文件中加载声音，最好使用`HashMap<Integer , Integer>`来管理所加载的声音|
+|使用SoundPool的play()方法播放声音|
+
+image
+
++ 实际使用SoundPool播放声音时有如下几点需要注意：SoundPool虽然可以一次性加载多个声音，但由于内存限制，因此应该避免使用SoundPool来播放歌曲或者做游戏背景音乐，只有哪些短促、密集的声音才考虑使用SoundPool进行播放；虽然SoundPool比MediaPlayer的效率好，但也不是绝对不存在延迟问题，尤其在那些性能不太好的手机中，SoundPool的延迟问题会更严重；
