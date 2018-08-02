@@ -41,7 +41,30 @@ mPlayer.prepare();
 //播放
 mPlayer.start();
 ```
+#### 播放来自网络的音频文件
 
+|播放来自网络的音频文件有两种方式|
+|------|
+|直接使用MediaPlayer的静态方法create(Context context , Uri uri)|
+|调用MediaPlayer的setDataSource(Context context , Uri uri)方法装载指定的Uri对应的音频文件|
+
++ 以第二种方式播放来自网络的音频文件的步骤如下：
+
+|步骤|
+|------|
+|根据网络上的音频文件所在的位置创建Uri对象|
+|创建MediaPlayer对象（或利用已有的MediaPlayer对象），并调用MediaPlayer对象的setDataSource(Context context , Uri uri)方法装载Uri对应的音频文件|
+|调用MediaPlayer对象的prepare()方法准备音频|
+|调用MediaPlayer对象的start()、stop()、pause()等方法控制播放即可|
+
+```
+Uri uri = Uri.parse("http://www.crazyit.org/abc.mp3");
+MediaPlayer mPlayer = new MediaPlayer();
+mPlayer.setDataSource(this , uri);
+mPlayer.prepare();
+mPlayer.start();
+```
++ MediaPlayer除了调用prepare()方法来准备声音之外，还可以调用prepareAsync()来准备声音，prepareAsync()与普通prepare()方法的区别在于，prepareAsync()方法是异步的，它不会阻塞当前的UI线程；
 
 ##### Activity
 
