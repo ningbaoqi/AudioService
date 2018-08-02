@@ -19,3 +19,5 @@
 |prepare()|预期做准备|
 |stop()|停止|
 |release()|释放该对象的资源|
+
+[录制生活短片](https://github.com/ningbaoqi/AudioService/blob/master/README-%EF%BC%ADediaRecorder1.md)
