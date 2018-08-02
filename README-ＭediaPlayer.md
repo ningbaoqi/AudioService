@@ -47,7 +47,7 @@
 |start()|开始或恢复播放|
 |stop()|停止播放|
 
-
+[ＭediaPlayer播放音频文件](https://github.com/ningbaoqi/AudioService/blob/master/README-mediaplayer.md)
 
 
 
