@@ -14,3 +14,11 @@
 |int load(FileDescriptor fd , long offset , long length , int priority)|加载fd所对应的文件中从offset开始，长度为length的声音|
 |int load(AssetFileDescriptor afd , int priority)|从afd所对应的文件中加载声音|
 |int load(String path , int priority)|从path对应的文件去加载声音|
+
++ 上面4个方法中都有一个priority参数，该参数目前还没有任何作用，Android建议将该参数设置为1，保持和未来的兼容性；上面4个方法加载声音之后，都会返回该声音的ID，所以程序就可以通过该声音的ID来播放指定声音了；
+
+|SoundPool提供的播放指定声音的方法|说明|
+|-------|-------|
+|int play(int soundID , float leftVolume , float rightVolume ,int priority , int loop , float rate)|该方法的第一个参数指定播放哪个声音，leftVolume、rightVolume指定左、右的音量；priority：指定播放声音的优先级，数值越大，优先级就越高；loop：指定是否循环，0为不循环，-1为循环；rate：指定播放的比率，数值可从0.5到2，1为正常比率|
+
++ 为了更好的管理SoundPool所加载的每个声音的ID，程序会使用`HashMap<Integer , Integer>`对象来管理声音；
