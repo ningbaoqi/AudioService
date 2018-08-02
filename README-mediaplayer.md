@@ -24,6 +24,23 @@ mPlayer.prepare();
 //播放
 mPlayer.start();
 ```
+#### 播放外部存储器上的音频文件
+
+|播放外部存储器上的音频文件按如下步骤进行|
+|------|
+|创建MediaPlayer对象（或利用已有的MediaPlayer对象） ， 并调用MediaPlayer对象的setDataSource(String path)方法装载指定的音频文件|
+|调用MediaPlayer对象的prepare()方法准备音频|
+|调用MediaPlayer的start()、pause()、stop()等方法控制播放即可|
+
+```
+MediaPlayer mPlayer = new MediaPlayer();
+//使用MediaPlayer装载指定的声音文件
+mPlayer.setDataSource("/mnt/sdcard/mysong.mp3");
+//准备声音
+mPlayer.prepare();
+//播放
+mPlayer.start();
+```
 
 
 ##### Activity
